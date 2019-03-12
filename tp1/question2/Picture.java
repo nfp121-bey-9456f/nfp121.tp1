@@ -21,6 +21,7 @@ public class Picture {
     private Triangle roof;
     private Circle sun;
     private Circle sunj;
+    public boolean EarthFix=true;
 
     /**
      * Constructor for objects of class Picture
@@ -53,7 +54,7 @@ public class Picture {
         sun = new Circle();
         sun.changeColor("blue");
         sun.moveHorizontal(180);
-        sun.slowMoveVertical(240);
+        sun.moveVertical(-20);
         sun.changeSize(60);
         sun.makeVisible();
         
@@ -63,6 +64,7 @@ public class Picture {
         sunj.moveVertical(-20);
         sunj.changeSize(60);
         sunj.makeVisible();
+        
     }
 
     /**
@@ -90,5 +92,16 @@ public class Picture {
             sun.changeColor("yellow");
         }
     }
+
+    /**
+     * Move sun if earth is fix
+     */
+
+    public void sunSet() {
+
+        if(EarthFix==true)
+            sun.slowMoveHorizontal(100);
+    }
+
 
 }
